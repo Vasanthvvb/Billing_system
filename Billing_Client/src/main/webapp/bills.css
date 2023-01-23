@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 18px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
+nav{
+    display: flex;
+    flex-direction: row;
+    padding: 8px 3px;
+}
+.nav-head{
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    flex: 2;
+}
+.nav-link{
+    flex: 1;
+}
+.nav-link ul{
+    display: flex;
+    flex-direction: row;
+}
+.nav-link ul li{
+    list-style: none;
+    margin: 7px 1.5rem 4px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.nav-link ul li a{
+    text-decoration: none;
+    color: black;
+}
+.nav-link ul li a:hover{
+    text-decoration: underline 3px orange;
+}
+.nav-link ul li select{
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+}
+.nav-link ul li select:hover{
+    text-decoration: underline 3px orange; 
+}
+
+#userName{
+    font-weight: normal;
+    font-size: 1rem;
+    margin-left: 5px;
+    color: blue;
+    text-decoration: underline 1px gray;
+}
+
+hr{
+    border: 2px blue  solid;
+    margin-bottom: 2rem;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items:center; */
+    padding: 0rem 2rem;
+}
+
+.main-container .search{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.search label{
+    font-weight: bold;
+    margin-left: 0.8rem;
+}
+.search input{
+    background-color: rgb(249, 249, 249);
+    margin-right: 1rem;
+    padding: 4px 12px;
+    border: 1px solid lightblue;
+}
+.search input:hover{
+    cursor: pointer;
+    border: 1.5px solid rgb(44, 192, 241);
+}
+.search button{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 4px 10px;
+    margin-right: 1rem;
+    /* border-radius: 3px;
+    border: 2px solid lightgray;
+    background-color: darkgray;
+    color: black; */
+}
+.search button:hover{
+    padding: 4px 12px;
+    transition: ease-in-out 0.2s;
+}
+.search .searchBtn{
+    margin-right: 4rem;
+}
+.search a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 3rem;
+    padding: 10px;
+    color: green;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.main-container .wrapper{
+    overflow:scroll ;
+    height: fit-content;
+    max-height: 80vh;  
+    width: 100%;
+    max-width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+.table {
+    border:1px solid gray;
+    width: 100%;
+}
+.table-head{
+    position: sticky;
+    top: 0;
+    background-color: steelblue;
+    font-weight: bold;
+    font-size:1.4rem;
+    border: 2px solid black;
+ }
+ .table-head td{
+    text-align: center;
+ }
+ .table-body{
+    background-color: rgb(242, 242, 242);
+    font-size: 1.2rem;
+ }
+ .table-body td{
+    text-align: center;
+ }
+ .table-body tr:hover{
+    background-color: rgb(224, 224, 224);
+ }
+th, td {
+    text-align: left;
+    padding: 10px 8px;
+}
+.table-body .billItems{
+    background-color: white;
+    padding: 3px;
+    font-size: 12px;
+    word-spacing: 2px;
+    cursor: pointer;
+}
+.table-body select .option-items {
+    color: #000;
+    font-weight: bold;
+}
+.table-body tr .pay_btn{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    padding:2px 10px;
+    border: 2px solid rgb(17, 255, 0);
+    border-radius: 3px;
+    background-color: white;    
+}
+.table-body tr .pay_btn:hover{
+    background-color: rgba(127, 248, 129, 0.519);
+}
+.table-body tr a{
+    color: rgb(79, 9, 242);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container aside form{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.container aside form input, button{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    padding: 5px;
+    font-weight: bold;
+}
+.container aside form button:hover{
+    font-size: 1.2rem;
+    padding: 7px;
+    transition: ease-in-out .2s;
+}
+
+aside .paymentDetails{
+    margin: 3rem 0rem 0rem 2rem;
+}
+aside .paymentDetails h1{
+    text-decoration: 2px underline gray;
+    margin-bottom: 1rem;
+}
+aside .paymentDetails table thead{
+    font-weight: bold;
+}
+aside .paymentDetails table td{ 
+    border: 1px solid black;
+    text-align: center;
+    font-size: 1.2rem;
+}
+

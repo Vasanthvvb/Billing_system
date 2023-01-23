@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Billing System</title>
+  <link rel="stylesheet" href="products.css">
+</head>
+<body onload="checkSession()">
+
+  <nav>
+    <div class="nav-head">
+      Billing System <span id="userName"><p></p></span>
+    </div>
+    <div class="nav-link">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li>     
+          <select onchange="func_productNav(this)">
+            <option value="" disabled selected>Products</option>
+            <option value="product.html">Add</option>
+            <option value="viewProduct.html">View</option>
+          </select>
+      </li>
+        <li><a href="bills.html">Bills</a></li>
+        <li><a href="#" id="logout">LogOut</a></li>
+      </ul>
+    </div>
+  </nav>
+  <hr>
+
+  <div class="container">
+    <form class="productForm">
+      <h2>Add a new product</h2>
+      <div>
+        <label for="pdId">Product Code</label>
+        <input type="text" name="pdId" id="pdId" required>
+      </div>
+      <div>
+        <label for="pdName">Product Name</label>
+        <input type="text" name="pdName" id="pdName" required>
+      </div>
+      <div>
+        <label for="pdQuantity">Quantity</label>
+        <input type="number" min="0" name="pdQuantity" id="pdQuantity" required>
+      </div>
+      <div>
+        <label for="pdPrice">Price</label>
+        <input type="number" min="1" name="pdPrice" id="pdPrice" required>
+      </div>
+      <div>
+        <label for="pdTax">Tax</label>
+        <input type="number" min="0" name="pdTax" id="pdTax" required>
+      </div>
+      <div>
+        <label for="pdCategory">Category</label>
+        <input type="text" name="pdCategory" id="pdCategory" required>
+      </div>
+      <button name="submit" id="add_btn" onclick="addProduct(event)">Add Product</button>
+    </form>
+
+    <form class="discountForm">
+      <h2>Add Discount</h2>
+      <div>
+        <label for="category">Product Category</label>
+        <input type="text" name="category" id="category" required>
+      </div>
+      <div>
+        <label for="discount">Discount Percentage</label>
+        <input type="number" min="0" name="discount" id="discount" required>
+      </div>
+      <button id="btn" onclick="setDiscount(event)">Add Discount</button>
+    </form>
+
+  </div>
+  
+</body>
+  <script src="products.js"></script>
+</html>

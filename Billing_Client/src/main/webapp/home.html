@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Billing System</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body onload="checkSession()">
+
+  <nav>
+    <div class="nav-head">
+      Billing System <span id="userName"><p></p></span>
+    </div>
+    <div class="nav-link">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li>     
+          <select onchange="func_productNav(this)">
+            <option value="" disabled selected>Products</option>
+            <option value="product.html">Add</option>
+            <option value="viewProduct.html">View</option>
+          </select>
+      </li>
+        <li><a href="bills.html">Bills</a></li>
+        <li><a id="logout">LogOut</a></li>
+      </ul>
+    </div>
+  </nav>
+  <hr>
+
+  <div class="wrapper">
+
+    <section>
+      <div class="top-container">
+        <h3>Customer Details</h3>
+        <input type="name" id="cusName" placeholder="Enter customer name" required>
+        <input type="tel" id="phone" placeholder="Enter mobile number" required>
+      </div>
+
+      <form class="bottom-container"> 
+          <select name="productName" id="pdName" onchange="getDetails(this)" required>
+            <option value="" disabled selected>Product Name</option>
+          </select>
+          <input type="text" name="pdId" id="pdId" placeholder="Product Id" required disabled>
+          <input type="number" min="1" name="pdQuantity" id="pdQuantity" onkeydown = "return false" placeholder="Qunatity" required>
+          <input type="text" name="pdPrice" id="pdPrice" placeholder="Price per qunatity" required disabled>
+          <button type="button" id="add_btn" onclick="addtoBill()">Add</button>
+      </form>
+      <button id="saveBtn" onclick="saveBill(event)">Save and Pay</button>
+
+      <div class="pay-container">
+        <p>Payment</p>
+        <form>
+          <div>
+            <label for="cardholder">CARDHOLDER'S NAME</label>
+            <input type="text" id="cardholder" placeholder="Name on card">
+          </div>
+          <div>
+            <label for="cardnumber">CARDHOLDER NUMBER</label>
+            <input type="tel" id="cardnumber" placeholder="---- ---- ---- ----">
+          </div>
+          <div>
+            <label for="expiryDate">EXPIRY DATE</label>
+            <input type="text" id="expiryDate" placeholder="mm/yyyy">
+          </div>
+          <div>
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="CVV code">
+          </div>
+          <div>
+            <label for="fetched_amount">Amount</label>
+            <input type="text" id="fetch_amount" placeholder="Amount to pay">
+          </div>
+          <button id="pay_btn" onclick="paymentFunc(event)">PAY NOW</button>
+        </form>
+      </div>
+
+    </section>
+    
+
+    <aside>
+      <table class="table">
+        <thead class="table-head">
+          <tr>
+            <td>Product Name</td>
+            <td>Rate</td>
+            <td>Tax%</td>
+            <td>Quantity</td>
+            <td>Discount%</td>
+            <td>Total</td>
+            <td><button id="deleteBtn">Delete</button></td>
+          </tr>
+        </thead>
+
+        <tbody class="table-body">
+
+        </tbody>
+      </table>
+    </aside>
+  </div>
+
+  <div class="result">
+    <h1>Total : </h1>
+    <h1 id="total"></h1>
+  </div>
+
+</body>
+  <script src="home.js"></script>
+</html>

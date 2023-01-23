@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bills | Billing System</title>
+    <link rel="stylesheet" href="bills.css">
+</head>
+<body onload="checkSession()">
+
+    <nav>
+        <div class="nav-head">
+            Billing System <span id="userName"><p></p></span>
+        </div>
+        <div class="nav-link">
+            <ul>
+            <li><a href="home.html">Home</a></li>
+            <li>     
+                <select onchange="func_productNav(this)">
+                <option value="" disabled selected>Products</option>
+                <option value="product.html">Add</option>
+                <option value="viewProduct.html">View</option>
+                </select>
+            </li>
+            <li><a href="bills.html">Bills</a></li>
+            <li><a id="logout">LogOut</a></li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+
+    <div class="main-container">
+        <div class="search">
+            <button id="userBills">My bills</button>
+            <button id="unpaid_btn">Unpaid bills</button>
+            <label for="startDate">Start Date: </label>
+            <input type="date" id="startDate">
+            <label for="endDate">End Date: </label>
+            <input type="date" id="endDate">
+            <button class="searchBtn">Search</button>
+            <input type="text" id="customerId" placeholder="Search by customer">
+            <button class="searchBtn1">Search</button>
+            <a>TOTAL: <span id="bill_totalAmount"></span></a>
+        </div>
+        
+        <div class="container">
+            <div class="wrapper">
+                <table class="table">
+                    <thead class="table-head">
+                        <tr>
+                            <td>Bill Id</td>
+                            <td>Customer Id</td>
+                            <td>Total</td>
+                            <td>Balance</td>
+                            <td>Date</td>
+                            <td>Items</td>
+                            <td></td>
+                            <td>Payments</td>
+                        </tr>
+                    </thead>
+        
+                    <tbody class="table-body">
+            
+                    </tbody>
+                </table>
+            </div>
+
+            <aside>
+                <form id="PayingBalance">
+                    <div>
+                    <label for="billId">Bill Id</label>
+                    <input type="text" name="billId" id="billId" required disabled>
+                    </div>
+                    <div>
+                    <label for="amount">Amount</label>
+                    <input type="number" min="0" name="amount" id="amount" required>
+                    </div>
+                    <button id="btn" onclick="payBalance_amount(event)">Pay now</button>
+                </form>
+
+                <div class="paymentDetails">
+                    <h1>Payments</h1>
+                    <table class="">
+                        <thead>
+                            <tr>
+                                <td>Amount</td>
+                                <td>Date</td>
+                            </tr>
+                        </thead>
+                        <tbody class="pay_tableBody">
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </aside>
+
+        </div>
+    <div> 
+</body>
+    <script src="bills.js"></script>
+</html>
